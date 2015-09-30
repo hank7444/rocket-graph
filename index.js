@@ -49,7 +49,7 @@
     	{ label: "", data: [], points: { symbol: "circle"} },
     ];
 
-    var dataSetLine = dataSetLineDefault.slice(0);
+    var dataSetLine = $.extend(true, [], dataSetLineDefault);
 
     var optionsLine = {
         series: {
@@ -176,7 +176,7 @@
 			updateChart();
 			clearTimeout(timerId);
 
-			setTimeout(function() {
+			timerId = setTimeout(function() {
 				updateData();
 			}, updateInterval)
 
